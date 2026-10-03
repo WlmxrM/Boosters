@@ -21,11 +21,11 @@ jobs:
         run: chmod +x gradlew
 
       - name: Compilar
-        run: ./gradlew build --no-daemon
+        run: ./gradlew build libreforgeJar --no-daemon
 
       - uses: actions/upload-artifact@v4
         with:
           name: Boosters
           path: |
             bin/*.jar
-            build/libs/*.jar
+            **/build/libs/*.jar
